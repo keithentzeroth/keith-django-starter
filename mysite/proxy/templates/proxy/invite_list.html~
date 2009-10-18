@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Invites</title>
+</head>
+<body>
+<h1>Invites</h1>
+<form action="/proxy" method="post">
+<h3>Available Invitations</h3>
+  <fieldset>
+<ul>
+{% for q in object_list %}
+<li>
+<input type="radio" name="invite_id" value="{{q.id}}"/>{{ q.granter_name }}--{{ q.granter_id }}--{{q.invited_email}}--{{q.date}}
+</li>
+{% endfor %}
+</ul>
+<input type="submit" value="Submit" />
+</fieldset>
+</form>
+<h3>Invite By Email</h3>
+<form action="/proxy/invite" method="post">
+  <fieldset>
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+  </fieldset> 
+</form>
+
+</body>
+</html>

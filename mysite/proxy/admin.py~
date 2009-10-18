@@ -1,0 +1,6 @@
+from mysite.proxy.models import Proxy_Invite
+from django.contrib import admin
+from mysite.proxy.models import Proxy
+
+admin.site.register(Proxy)
+admin.site.register(Proxy_Invite)

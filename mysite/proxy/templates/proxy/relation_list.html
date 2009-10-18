@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Relations</title>
+</head>
+<body>
+<h1>Relations</h1>
+<form action="/proxy" method="post">
+<h3>Your Current Proxy Access...</h3>
+<ul>
+{% for q in object_list %}
+<li>
+<input type="hidden" name="method" value="delete" />
+<input type="radio" name="relation_id" value="{{q.id}}"/>{{q.granter_name}}---{{ q.granter_id }}--{{q.acceptor_id}}--{{q.date}}
+</li>
+{% endfor %}
+</ul>
+<input type="submit" value="Remove My Proxy Access" />
+</form>
+
+<form action="/proxy" method="post">
+<h3>People You've Granted Proxy Access...</h3>
+<ul>
+{% for q in granted_list %}
+<li>
+<input type="hidden" name="method" value="delete" />
+<input type="radio" name="relation_id" value="{{q.id}}"/>{{q.acceptor_name}}--{{ q.granter_id }}--{{q.acceptor_id}}--{{q.date}}
+</li>
+{% endfor %}
+</ul>
+<input type="submit" value="Revoke Their Proxy Access" />
+</form>
+</body>
+</html>
