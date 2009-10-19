@@ -7,11 +7,12 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def index(request, proxy_id=None):
+def index(request):
     latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
     t = loader.get_template('polls/index.html')
     c = Context({
         'latest_poll_list': latest_poll_list,
+        'proxy': request.GET.get('proxy','none'),
     })
     return HttpResponse(t.render(c))
 

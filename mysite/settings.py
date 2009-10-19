@@ -58,6 +58,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'mysite.proxy.middleware.ProxyMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -84,3 +85,4 @@ INSTALLED_APPS = (
     'mysite.polls',
     'mysite.proxy',
 )
+
