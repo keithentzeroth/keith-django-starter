@@ -1,13 +1,14 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from mysite.polls.models import Poll
 from django import forms
 
 def home_view(request, extraStuff=None):
     if request.user.is_authenticated():
         print('user is authorized')
-        return render_to_response('loggedin.html', dict())
+        return render_to_response('loggedin.html', dict(), context_instance=RequestContext(request))
     else:
         form = LoginForm()
         return render_to_response('login.html', {'form':form})
@@ -25,7 +26,7 @@ def login_view(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return render_to_response('loggedin.html', dict())
+            return render_to_response('loggedin.html', dict(), context_instance=RequestContext(request))
         else:
             form = LoginForm()
             return render_to_response('login.html', {'form':form})
