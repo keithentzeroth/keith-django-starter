@@ -17,11 +17,11 @@ def home(request, extraStuff=None):
 def vlogout(request):
     logout(request)
     form = LoginForm()
-    return render_to_response('login.html', {'form':form})
+    return render_to_response('login.html', {'form':form}, context_instance=RequestContext(request))
 
 def glogin(request):
     form = LoginForm()
-    return render_to_response('login.html', {'form':form})
+    return render_to_response('login.html', {'form':form}, context_instance=RequestContext(request))
 
 def plogin(request):
     username = request.POST['username']
@@ -33,15 +33,15 @@ def plogin(request):
             return render_to_response('home.html', dict(), context_instance=RequestContext(request))
         else:
             form = LoginForm()
-            return render_to_response('login.html', {'form':form})
+            return render_to_response('login.html', {'form':form}, context_instance=RequestContext(request))
     else:
         form = LoginForm()        
-        return render_to_response('login.html',{'form':form} )
+        return render_to_response('login.html',{'form':form} , context_instance=RequestContext(request))
 
 
 def gaccount(request):
     form = SignUpForm(request.POST)
-    return render_to_response('account/create.html',{'form':form})
+    return render_to_response('account/create.html',{'form':form}, context_instance=RequestContext(request))
     
 def paccount(request):
     form = SignUpForm(request.POST)
@@ -58,8 +58,8 @@ def paccount(request):
         user.first_name = firstname
         user.last_name = lastname
         user.save()
-        return render_to_response('account/created.html')
-    return render_to_response('account/create.html',{'form':form})
+        return render_to_response('account/created.html', dict(), context_instance=RequestContext(request))
+    return render_to_response('account/create.html',{'form':form}, context_instance=RequestContext(request))
 
 
 class LoginForm(forms.Form):
