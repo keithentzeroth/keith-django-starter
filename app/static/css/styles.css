@@ -1,0 +1,5 @@
+		a{ color: #333333 }
+		
+		.links{ list-style-type: none; padding: 0 0 0 5px}
+		.links a{ font-weight: bold; font-size: 1.2em; text-decoration: none; padding: .75em; display:block}
+		.links a:hover{ text-decoration: underline}
