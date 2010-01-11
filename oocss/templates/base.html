@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>Cerner Health Beta - {% block pagetitle %}{% endblock %}</title>
+	<meta name="copyright" content="Copyright Cerner Corporation" />
+{% block additional_meta %}{% endblock additional_meta %}
+
+<link rel="stylesheet" type="text/css" media="all"  href="{{ MEDIA_URL }}css/oocsslib/libraries.css" />
+<link rel="stylesheet" type="text/css" media="all"  href="{{ MEDIA_URL }}css/oocsslib/template.css" />
+<!--<link rel="stylesheet" type="text/css" media="all"  href="{{ MEDIA_URL }}css/oocsslib/template_debug.css" />-->
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/oocsslib/grids.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/oocsslib/content.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/oocsslib/mod.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/oocsslib/mod_skins.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/oocsslib/tabs.css" />
+
+{% block additional_css %}{% endblock %}
+{% block base_js %}{% endblock %}
+{% block js %}{% endblock %}
+
+</head>
+<body>
+
+<h1>Template</h1>
+
+<div class="page">
+	<div class="head{% block head_skin %}{% endblock head_skin %}">
+		{% block head %}
+		<h2>Head</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		{% endblock head %}
+	</div>
+	<div class="body{% block body_skin %}{% endblock body_skin %}">
+{% load containers %}
+{% mod simple tabs %}
+{% modhead topper%}
+<h3>Adding a header</h3>
+{% endmodhead %}
+{% modbody %}
+
+	    {% block body %}
+		<div class="leftCol{% block leftCol_skin %}{% endblock leftCol_skin %}">
+	    {% block leftCol_content %}
+			<h2>Left Column</h2>
+			<p>Left column is 250px by default. It can be extended by several classes to allow for additional layouts.</p>
+			<ul>
+				<li>.gMail = 160px</li>
+				<li>.gCal = 180px</li>
+				<li>.yahoo = 240px</li>
+				<li>.myYahoo = 300px</li>
+			</ul>
+	    {% endblock leftCol_content %}
+		</div>
+		<div class="rightCol{% block rightCol_skin %}{% endblock rightCol_skin %}">
+	    {% block rightCol_content %}
+		{% mod simple %}
+		{% modhead %}
+			<h2>Right Column</h2>
+		{% endmodhead %}
+		{% modbody %}
+			<p>The right column is by default 300px wide.  It can be extended via all the same classes that are available to right column.</p>
+			<ul>
+				<li>.gMail = 160px</li>
+				<li>.gCal = 180px</li>
+				<li>.yahoo = 240px</li>
+				<li>.myYahoo = 300px</li>
+			</ul>
+		{% endmodbody %}
+		{% endmod %}
+	    {% endblock rightCol_content %}
+		</div>
+		<div class="main{% block main_skin %}{% endblock main_skin %}">
+	    {% block main_content %}
+			<h2>Main Content</h2>
+			<p>Main Content is fully liquid. It takes all the remaining space on the line after the widths of "leftCol" and "rightCol" are taken into account. Alternatively, grids can be used to break up the main content area for fully fluid layouts.</p>
+	    {% endblock main_content %}
+		</div>
+	    {% endblock body %}
+{% endmodbody %}
+{% endmod %}
+
+	</div>
+	<div class="foot{% block foot_skin %}{% endblock foot_skin %}">
+	    {% block foot %}
+		<h2>Foot</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
+	    {% endblock foot %}
+	</div>	
+</div>
+
+
+</body>
+</html>

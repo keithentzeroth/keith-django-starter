@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+{% load containers %}
+
+<div class="line">
+<div class="unit 1of2">
+{% mod grab extension%}
+  {% modhead %}
+  TestHeader
+  {% endmodhead %}
+  {% modbody %}
+  TestBody
+  {% endmodbody %}  
+{% endmod %}
+</div>
+<div class="unit 1of2 lastUnit">
+{% mod simple%}
+  {% modhead %}
+  TestHeader
+  {% endmodhead %}
+  {% modbody %}
+  TestBody
+  {% endmodbody %}  
+{% endmod %}
+</div>
+</div>
+{% endblock main_content %}
