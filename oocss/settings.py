@@ -65,11 +65,14 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, 'templates')
+    os.path.join(SITE_ROOT, 'templates'),
+    os.path.join(SITE_ROOT, 'oo/templates'),
 )
+print TEMPLATE_DIRS
+
 
 INSTALLED_APPS = (
-    'oocss',
+    'oo',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
