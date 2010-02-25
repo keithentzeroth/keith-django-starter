@@ -5,33 +5,43 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<title>entzeroth.com {% block pagetitle %}{% endblock %}</title>
 	<meta name="copyright" content="Copyright Cerner Corporation" />
+	<link href="{{ MEDIA_URL }}css/oocsslib/libraries.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="{{ MEDIA_URL }}css/oocsslib/template.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="{{ MEDIA_URL }}css/oocsslib/grids.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="{{ MEDIA_URL }}css/styles.css" media="all" rel="stylesheet" type="text/css" />
+
+{% ifequal request.platform 'mobile' %}
+	<link href="{{ MEDIA_URL }}css/mobile.css" media="all" rel="stylesheet" type="text/css" />
+{% endifequal %}
+    <link REL="SHORTCUT ICON" HREF="{{ MEDIA_URL }}images/e.ico">
 </head>
 <body>
 
+<div class="head">
 <div class="page">
-	<div class="head">
-		<h1>Entzeroth.com</h1>
-		<p>The personal web page of Keith Entzeroth.  (I just started this thing...cut me some slack)</p>	
-	</div>
-	<div class="body">
-		<div class="leftCol">
-		<h2>About Me</h2>
+	<h1><a href="http://www.entzeroth.com">Entzeroth.com</a></h1>		
+</div>
+</div>
+<div class="nav">
+<div class="page">
+	<ul>
+		<li><a href="http://blog.entzeroth.com">blog</a></li>
+		<li><a href="http://www.twitter.com/keithentzeroth">twitter</a></li>
+		<li><a href="http://www.linkedin.com/in/keithentzeroth">linked in</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="body">
+<div class="page">
+		<div class="leftCol gCal">
 		<a href="http://www.flickr.com/photos/46184214@N05/4252834708/" title="IMAG0036 by keithentzeroth, on Flickr"><img src="http://farm5.static.flickr.com/4046/4252834708_aa7c752e9f_m.jpg" width="161" height="240" alt="IMAG0036" /></a>
+		<h2>About Me</h2>
 		<p>
-		I live in Kansas City with my wife and two children.  I'm employed at Cerner Corporation as an architect focused on all things web.
+		I live in Kansas City with my wife and two children.  I'm employed at Cerner Corporation as an architect focused on all things web.<br/><br/>Teams explained: I grew up in St. Louis and went to school at Purdue.  
 		</p>
-		<h2>Elsewhere</h2>
-		<ul class="links">
-<!--		<li><a href="http://www.keithentzeroth.com">keithentzeroth.com</a></li> -->
-			<li><a href="http://www.twitter.com/keithentzeroth">twitter</a></li>
-			<li><a href="http://www.linkedin.com/in/keithentzeroth">linked in</a></li>
-			<li><a href="http://keithentzeroth.blogspot.com/">blogspot</a></li>
-  		</ul>		
 		</div>
-		<div class="rightCol">
+		<div class="rightCol gCal">
 		<h2>Teams</h2>
 		<ul class="links">
 		  <li>St. Louis
@@ -52,34 +62,32 @@
 		<h2>Bookshelf</h2>
 		<ul class="links">
 		  <li>Heretics: GK Chesterton</li>
-		  <li><a href="/archive">Archive</a></li>
 		</ul>
 		</div>
-		<div class="main">
-			<h2>Interesting...</h2>
-			<p>will be pointing out some stuff in my blog and around the web...</p>		
+		<div id="maindiv" class="main">
 		</div>
-	</div>
-	<div class="foot">
-		@2010 Keith Entzeroth
-	</div>	
 </div>
+</div>
+<div class="pre-foot other2">
+<div class="page">
+</div>
+</div>	
 
 
-  <div class="body">
-	<div id="header">
-	</div>
-
-	<div id="center" class="column">
-	</div>
-	<div id="left" class="column">
-	</div>
-
-	<div id="right" class="column">
-	</div>
-
-	<div id="footer"></div>
-  </div>
-
+<div class="foot">
+<div class="page">
+		@2010 Keith Entzeroth 				
+</div>
+</div>	
+<script>
+var fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript")
+fileref.setAttribute("src", "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js")
+document.getElementsByTagName("head")[0].appendChild(fileref)
+var fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript")
+fileref.setAttribute("src", "/static/js/loadlatestblogs.js")
+document.getElementsByTagName("head")[0].appendChild(fileref)
+</script>
 </body>
 </html>

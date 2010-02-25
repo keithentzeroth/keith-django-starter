@@ -1,0 +1,6 @@
+<h2>Latest From The Blog...</h2>
+{% for o in latest_blogs.values %}
+<p>
+  <span class="article">{{ o.title|safe }}</span><small>{{ o.date }}</small>
+</p>
+{% endfor %}

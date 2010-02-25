@@ -12,5 +12,6 @@ urlpatterns = patterns('django.views.generic.simple',
 #    )
 
 urlpatterns += patterns('',
+    (r'^latest_blogs/?$', 'views.scrapeLatestBlog'),
     (r'^(.*)$', 'views.home'),
 )
