@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
+from mysite.utils import dispatch
 
 admin.autodiscover()
 

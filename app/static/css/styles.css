@@ -1,27 +1,44 @@
-html{background: #EDEDED; color: #333333}
-.head{background: #EDEDED; padding: 1em 0}
+html{ background:#FFF; color: #333333}
+.head{background: #FFFFFF; padding: 1em 0}
 .sub-head{background: #FFFFFF; padding: .75em 0; color: #FFFFFF}
 .pre-foot{background: #FFFFFF; padding: .75em 0; color: #FFFFFF}
-.foot{background: #EDEDED; padding: 1em 0 }
+.foot{background: #FFFFFF; padding: 1em 0 }
 .body{background: #FFFFFF; padding: .6em 0; }
 
 h1, .h1{ font-size: 2em; color: #666666}
-h2, .h2{ font-size: 167%; color: #CC6600; border-bottom: 1px dotted #CCCCCC; margin-bottom: .75em} 
-h3, .h3{ font-size: 130%; color: #999999}
-	
+h2, .h2{ font-size: 167%; color: #CCC; border-bottom: 1px dotted #CCCCCC; margin-bottom: .75em} 
+h3, .h3{ font-size: 130%; color: #DDD}
+
+p, .p{ padding: .25em 0}
+
 h1 a{ color: #666666;} 	
-a{ color: #5588AA; text-decoration: none;  padding: .5em }
+a{ color: #5588AA; text-decoration: none; }
 a:hover{ text-decoration: underline}		
 		
-.links{ list-style-type: none; padding: 0 0 0 5px}
-.links a{ font-weight: bold; font-size: 1.2em; padding: .75em; display:block}
+.links{ list-style-type: none; margin: 0 0 0 5px}
+.links a{ display:block}
 
 .main{padding: 0 1em}
 .main .article{font-size: 1.25em; padding: 1.25em 0 0 .5em; display:block}
 .main small{ color: #666666; padding: .5em 2em}
 .main h2{margin-bottom: 0}
 
-.nav{padding: .5em}
+.nav{ margin: .4em 0}
 .nav ul, .nav li{display: inline}
+.nav a{ margin: 0 .5em 0 0}
 
 .leftCol p{ text-align: justify}
+
+pre{ border: 1px solid #000; box-shadow: inset 1px 1px #000}
+code{ margin: .5em; display:block}
+
+#latestBlogs small{display:block}
+#latestBlogs a{ padding: 0 0 0 0}
+#latestBlogs p{ padding: .25em 0}
+
+div.tweet .avatar .user{ margin: 0 0 8px 4px; font-size: 1.25em}
+div.tweet .avatar a{ float:left}
+div.tweet{ background: #EDEDED; padding: 1em; float:left}
+div.tweet .tweet_time{ display:block}
+ul.tweet_list li{ margin: .5em 0}
+ul.tweet_list{clear:both; float:left}

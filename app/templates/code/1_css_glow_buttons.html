@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+		    <h2>Enhance Button Hover Effects with CSS Text Shadow</h2>
+		    <p>In many places across the web, I see a flashy effect used to enhance the appeal of the sites links and buttons.  For the most part, it's always implemented with images.  However, all the major browsers( except IE) support CSS attributes that can achieve this same effect.  And for IE, you can either fall back to images, use their proprietary hacks, or fall back to a simple supported standard.</p>
+		    <style type="text/css">
+		      #button-demo{ padding: 1em}
+		      #button-demo a{ background: #5588AA; padding: .5em}
+		      #button-demo a{ color: #FFF }
+		      #button-demo a:hover{ text-shadow: 1px 1px 10px #FFF; text-decoration:none}
+		    </style>
+			<!--[if IE]> 
+			<style type="text/css">
+			  #button-demo a:hover{text-decoration:underline}
+			</style>
+			<![endif]-->
+		    <div id="button-demo">
+		      <a href="#">Mouse Over Me</a>
+		    </div>
+		    <p>The subtle glow around the letters on hovering gives a nice gentle feel that lets the user know they've found an action item.</p>
+		    <p>Let's take a look at the code:</p>
+		    <pre>
+		      <code>
+&lt;style type="text/css"&gt;<br />
+  #button-demo{ padding: 1em}<br />
+  #button-demo a{ background: #666666;}<br />
+  #button-demo a{ color: #FFF }<br />
+  #button-demo a:hover{ text-shadow: 1px 1px 10px #FFF;<br />
+                        text-decoration:none}<br />
+&lt;/style&gt;<br />
+&lt;!--[if IE]&gt; <br />
+  &lt;style type="text/css"&gt;<br />
+    #button-demo a:hover{text-decoration:underline}<br />
+  &lt;/style&gt;<br />
+&lt;![endif]--&gt;<br />
+&lt;div id="button-demo"&gt;<br />
+  &lt;a href="#"&gt;Mouse Over Me&lt;/a&gt;<br />
+&lt;/div&gt;
+		      </code>
+		    </pre>
+		    <p>My solution simply uses underline for ie support.  It's an elegant solution from the code's perspective and it still gives users of that browser the usability advantages of the hover effect.  As mentioned above, with a little labor, a solution can be made to support ie in the same manner as standard css is supported by Firefox, Chrome, Safari, etc.</p>
+		    <p>Combining this effect with a slight change in text color can yield great results.</p>
+		    <small>Posted Sunday March 14, 2010 at 12:15 am</small>
+		  </div>
+{% endblock main %}

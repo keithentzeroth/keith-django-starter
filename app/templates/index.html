@@ -1,93 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<title>entzeroth.com {% block pagetitle %}{% endblock %}</title>
-	<meta name="copyright" content="Copyright Cerner Corporation" />
-	<link href="{{ MEDIA_URL }}css/oocsslib/libraries.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="{{ MEDIA_URL }}css/oocsslib/template.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="{{ MEDIA_URL }}css/oocsslib/grids.css" media="all" rel="stylesheet" type="text/css" />
-	<link href="{{ MEDIA_URL }}css/styles.css" media="all" rel="stylesheet" type="text/css" />
+{% extends "base.html" %}
 
-{% ifequal request.platform 'mobile' %}
-	<link href="{{ MEDIA_URL }}css/mobile.css" media="all" rel="stylesheet" type="text/css" />
-{% endifequal %}
-    <link REL="SHORTCUT ICON" HREF="{{ MEDIA_URL }}images/e.ico">
-</head>
-<body>
-
-<div class="head">
-<div class="page">
-	<h1><a href="http://www.entzeroth.com">Entzeroth.com</a></h1>		
+{% block right %}
+<div class="tweet">
 </div>
-</div>
-<div class="nav">
-<div class="page">
-	<ul>
-		<li><a href="http://blog.entzeroth.com">blog</a></li>
-		<li><a href="http://www.twitter.com/keithentzeroth">twitter</a></li>
-		<li><a href="http://www.linkedin.com/in/keithentzeroth">linked in</a></li>
-	</ul>
-</div>
-</div>
-
-<div class="body">
-<div class="page">
-		<div class="leftCol gCal">
-		<a href="http://www.flickr.com/photos/46184214@N05/4252834708/" title="IMAG0036 by keithentzeroth, on Flickr"><img src="http://farm5.static.flickr.com/4046/4252834708_aa7c752e9f_m.jpg" width="161" height="240" alt="IMAG0036" /></a>
-		<h2>About Me</h2>
-		<p>
-		I live in Kansas City with my wife and two children.  I'm employed at Cerner Corporation as an architect focused on all things web.<br/><br/>Teams explained: I grew up in St. Louis and went to school at Purdue.  
-		</p>
-		</div>
-		<div class="rightCol gCal">
-		<h2>Teams</h2>
-		<ul class="links">
-		  <li>St. Louis
-		    <ul class="links">
-		      <li><a href="http://stlcardinals.com">Cardinals</a></li>
-		      <li><a href="http://stlrams.com">Rams</a></li>
-		      <li><a href="http://stlblues.com">Blues</a></li>
-		    </ul>
-		  </li>
-		  <li>Purdue
-		    <ul class="links">
-		      <li><a href="http://sports.espn.go.com/ncb/clubhouse?teamId=2509">BBall</a></li>
-		      <li><a href="http://sports.espn.go.com/ncf/clubhouse?teamId=2509">Football</a></li>
-		    </ul>
-		  </li>
-		</ul>
-
-		<h2>Bookshelf</h2>
-		<ul class="links">
-		  <li>Heretics: GK Chesterton</li>
-		</ul>
-		</div>
-		<div id="maindiv" class="main">
-		</div>
-</div>
-</div>
-<div class="pre-foot other2">
-<div class="page">
-</div>
-</div>	
+{% endblock right %}
 
 
-<div class="foot">
-<div class="page">
-		@2010 Keith Entzeroth 				
-</div>
-</div>	
-<script>
-var fileref=document.createElement('script')
-fileref.setAttribute("type","text/javascript")
-fileref.setAttribute("src", "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js")
-document.getElementsByTagName("head")[0].appendChild(fileref)
-var fileref=document.createElement('script')
-fileref.setAttribute("type","text/javascript")
-fileref.setAttribute("src", "/static/js/loadlatestblogs.js")
-document.getElementsByTagName("head")[0].appendChild(fileref)
-</script>
-</body>
-</html>
+{% block scripts %}
+<script type="text/javascript" src="/static/js/tweet.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $(".tweet").tweet({
+            username: "keithentzeroth",
+            avatar_size: 48,
+            count: 5,
+            loading_text: "loading tweets..."
+        });
+    });
+</script> 
+{% endblock scripts %}

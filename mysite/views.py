@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from mysite.polls.models import Poll
 from django import forms
+from django.http import HttpResponse
 
 def home_view(request, extraStuff=None):
     if request.user.is_authenticated():

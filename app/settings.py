@@ -64,6 +64,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'middlewares.UserAgentMiddleware',
 )
 
 ROOT_URLCONF = 'urls'

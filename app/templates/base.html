@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>{% block pagetitle %}entzeroth.com - A Personal Web Page for Keith Entzeroth{% endblock %}</title>
+	<link href="{{ MEDIA_URL }}css/libraries.css" media="all" rel="stylesheet" type="text/css" />
+	<meta name="google-site-verification" content="C2aJiIxBITTc8ynEKfNcYmDOGg5-pR75xd7ggGH9Jac" />
+{% ifequal request.platform 'mobile' %}
+	<link href="{{ MEDIA_URL }}css/mobile.css" media="all" rel="stylesheet" type="text/css" />
+{% else %}
+	<link href="{{ MEDIA_URL }}css/template.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="{{ MEDIA_URL }}css/styles.css" media="all" rel="stylesheet" type="text/css" />
+{% endifequal %}
+    <link REL="SHORTCUT ICON" HREF="{{ MEDIA_URL }}images/e.ico">
+</head>
+<body>
+<div class="navigation" style="display:none">
+  <a href="#content">Skip to Main Content</a>
+</div>
+<div class="head">
+<div class="page">
+	<h1><a href="http://www.entzeroth.com">Entzeroth.com</a></h1>		
+</div>
+</div>
+<div class="nav">
+<div class="page">
+	<ul>
+		<li><a href="/">home</a></li>
+		<li><a href="/blog">blog</a></li>
+		<li><a href="/about">about me</a></li>
+		<li><a href="/interests">interests</a></li>
+		<li><a href="/code">code</a></li>
+		<li><a href="/people">persons</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="body">
+<div class="page">
+		<div class="leftCol {% block leftColClass %}{% endblock %}">
+		{% block left %}
+        {% endblock left %}
+		</div>
+		<div class="rightCol  {% block rightColClass %}{% endblock %}">
+		  {% block right %}
+		  {% endblock right %}
+		</div>
+		<div id="maindiv" class="main {% block mainColClass %}{% endblock %}">
+		  {% block main %}
+		  <div id="content">
+		  </div>
+		  {% endblock main %}
+		</div>
+</div>
+</div>
+<div class="pre-foot other2">
+<div class="page">
+</div>
+</div>	
+
+
+<div class="foot">
+<div class="page">
+		@2010 Keith Entzeroth 				
+</div>
+</div>	
+{% ifequal request.platform 'desktop' %}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+{% endifequal %}
+{% block scripts %}
+{% endblock scripts %}
+</body>
+</html>
